@@ -1,16 +1,40 @@
 <ion-header [translucent]="true">
-	<ion-toolbar>
-		<ion-title>Work Shop</ion-title>
-		<ion-buttons slot="start">
-			<ion-menu-button></ion-menu-button>
-		</ion-buttons>
-	</ion-toolbar>
+    <ion-slides pager="true" class="slide-full"  >
+      <ion-slide *ngFor="let slide of slides" >
+          <ion-card >
+            <img  [src]="slide.img">
+            <ion-card-header>
+              <ion-card-title>
+              {{slide.title}}
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{slide.desc}}
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>     
+    </ion-slides>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <div id="container">
 
-	<div id="container">
-		<strong>In construction</strong>
-		<p>Application to manage your Work Shop</p>
-	</div>
+    <ion-button id="TMision">Mission</ion-button>
+    <ion-modal trigger="TMision">
+      <ng-template>
+        <ion-content>Mata 10 jabalies</ion-content>
+      </ng-template>
+    </ion-modal>
+
+    <ion-button id="TVision">Vision</ion-button>
+    <ion-modal trigger="TVision">
+      <ng-template>
+        <ion-content>Si</ion-content>
+      </ng-template>
+    </ion-modal>
+  
+    <ion-button id="TVision">Diseñe su casa</ion-button>
+    <ion-button id="TVision">Información de la empresa</ion-button>
+  </div>
+  
 </ion-content>
